@@ -1,0 +1,21 @@
+services:
+  desktop:
+    build:
+      context: .
+
+    volumes:
+      - ./dotfiles/zshrc:/home/TerminalMan/.zshrc:rw
+      - ./dotfiles/p10k.zsh:/home/TerminalMan/.p10k.zsh:rw
+
+      #  working_dir: /home/TerminalMan
+
+    command: sleep infinity
+    restart: always
+
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [gpu]
