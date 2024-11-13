@@ -1,0 +1,18 @@
+version: 2
+updates:
+  # Dockerfile dependencies
+  - package-ecosystem: "docker"
+    directory: "/"
+    schedule:
+      interval: "daily"
+  # docker-compose dependencies
+  - package-ecosystem: "docker"
+    directory: "/"
+    schedule:
+      interval: "daily"
+  # GitHub Actions dependencies
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "daily"
+
